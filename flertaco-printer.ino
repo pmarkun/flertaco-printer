@@ -2,9 +2,10 @@
 #include "logohacker.h"
 
 #include "SoftwareSerial.h"
-#define TX_PIN 2 // Arduino transmit  YELLOW WIRE  labeled RX on printer
-#define RX_PIN 3 // Arduino receive   GREEN WIRE   labeled TX on printer
-#define BT_PIN 8 // press button to print
+#define TX_PIN 2  // Arduino transmit  YELLOW WIRE  labeled RX on printer
+#define RX_PIN 3  // Arduino receive   GREEN WIRE   labeled TX on printer
+#define GD_PIN 4  // serial ground pin
+#define BT_PIN 12 // press button to print
 
 int pressed = 0;
 
@@ -77,6 +78,8 @@ void setup() {
   mySerial.begin(19200);
   printer.begin();
   pinMode(BT_PIN, INPUT_PULLUP);
+  pinMode(GD_PIN, OUTPUT); digitalWrite(GD_PIN, LOW); // "fake" ground
+  delay(1000);
   rockandroll();
 }
 
