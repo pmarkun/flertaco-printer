@@ -9,11 +9,17 @@
 
 int pressed = 0;
 
-#define NFRASES 3
+#define NFRASES 9
 char* frases[] = {
 "cada vereador pode contratar até 30 funcionários para seu gabinete?",
 "cada gabinete dispõe de 130 mil reais mensais para pagamento de salários de funcionários?",
-"cada gabinete pode gastar até 239 mil reais por ano com aluguel de veículos, assinaturas de jornais, serviços gráficos e material de escritório?"
+"cada gabinete pode gastar até 239 mil reais por ano com aluguel de veículos, assinaturas de jornais, serviços gráficos e material de escritório?",
+"dos 55 vereadores, 20 estão na câmara há mais de 10 anos?",
+"o orçamento da cidade de São Paulo em 2016 é de R$ 54.407.300.347,00?",
+"a secretaria de Educação recebe 20% do orçamento municipal: R$ 11.096.151.037,00?",
+"nesta última gestão do legislativo municipal já foram aprovados 603 projetos de lei?",
+"dos 603 projetos de lei aprovados nesta última gestão, 100 são sobre mudanças de nomes de rua?",
+"na últimas eleições para vereador, 60% dos eleitos já faziam parte da gestão anterior?"
 };
 
 SoftwareSerial mySerial(RX_PIN, TX_PIN); // Declare SoftwareSerial obj first
@@ -80,7 +86,7 @@ void setup() {
   pinMode(BT_PIN, INPUT_PULLUP);
   pinMode(GD_PIN, OUTPUT); digitalWrite(GD_PIN, LOW); // "fake" ground
   delay(1000);
-  rockandroll();
+  //rockandroll();
 }
 
 void loop() {
